@@ -1,6 +1,18 @@
-$.get( "http://localhost:1570/api/client", function( data ) {
-  console.log("...conexion de puta madre");
-  $( "body" )
-    .append( "Name: " + data.name )
-    .append( "Phone: " + data.phone );
-}, "json" );
+$(document).ready(function(){
+  
+  $(function(){
+      $.get( "http://localhost:1570/api/client", function( data ) {
+        $( "body" ).append('<ul>');
+        $.each(data, function(i,emp){
+          $('ul').append('<li>' + emp.Nombre + '</li>')
+            //$('ul').append( '<li>' + emp.Phone +'</li>')
+        }    
+        );
+      
+          $( "body" ).append('</ul>');
+      }).error(function(){
+        console.log('error');
+      });
+    });
+    
+});

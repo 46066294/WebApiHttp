@@ -6,9 +6,11 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Net;
+using System.Web.Http;
 
 namespace YourApplication.MessageHandlers
 {
+    //[Authorize]
     public class CorsHandler : DelegatingHandler
     {
         const string Origin = "Origin";
